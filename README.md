@@ -17,4 +17,4 @@ Plain static site: no build step. Open `index.html` in a browser, or serve the f
 - Logo (none yet; the header uses the name in text)
 
 ## Image credits
-- Hero photo: "Glass facade of a modern office building" by Fabian Kleiser on Unsplash (Unsplash License): https://unsplash.com/photos/glass-facade-of-a-modern-office-building-V5vF94h52r0
+- Hero photo: "Architectural photography of gray concrete building" by @renran on Unsplash (Unsplash License): https://unsplash.com/photos/architectural-photography-of-gray-concrete-building-oU2ruea3OzM
