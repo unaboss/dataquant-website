@@ -14,4 +14,4 @@ Plain static site: no build step. Open `index.html` in a browser, or serve the f
 ## To confirm before launch
 - Contact email and WhatsApp number (marked "to confirm")
 - Contact form endpoint
-- Logo (currently a simple four-square mark)
+- Logo (none yet; the header uses the name in text)
