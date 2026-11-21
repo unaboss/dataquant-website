@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | DataQuant</title>
+  <meta name="description" content="Talk to DataQuant about your data.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="var n=document.querySelector('.nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a class="btn btn-small" href="contact.html" aria-current="page">Contact us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <span class="eyebrow">Contact</span>
+        <h1>Let&rsquo;s talk about your data.</h1>
+        <p class="lead">Tell us a little about your organisation and what you need. We will reply within one business day.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container contact-grid">
+        <form id="contact-form" novalidate>
+          <div class="row-2">
+            <div><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+            <div><label for="org">Organisation</label><input id="org" name="organisation" autocomplete="organization"></div>
+          </div>
+          <div class="row-2">
+            <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+            <div><label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+          </div>
+          <div>
+            <label for="service">What do you need help with?</label>
+            <select id="service" name="service">
+              <option>Data Strategy &amp; Analytics</option>
+              <option>Data Engineering</option>
+              <option>Data Security &amp; Governance</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
+          <label class="consent"><input type="checkbox" id="consent" required> I agree that DataQuant may use these details to reply to my enquiry, as set out in the <a href="privacy.html">privacy notice</a>.</label>
+          <div><button class="btn" type="submit">Send message</button></div>
+          <p class="form-status" id="form-status" role="status"></p>
+        </form>
+
+        <aside>
+          <ul class="details">
+            <li><span class="k">Email</span><span class="v">[email to confirm]</span></li>
+            <li><span class="k">WhatsApp</span><span class="v">[WhatsApp number to confirm]</span></li>
+            <li><span class="k">Based in</span><span class="v">South Africa</span></li>
+            <li><span class="k">Hours</span><span class="v">Monday to Friday, 08:00 to 17:00</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+    <script>
+      document.getElementById('contact-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var f = e.target, s = document.getElementById('form-status');
+        if (!f.checkValidity()) { s.textContent = 'Please fill in your name, email, message and tick the consent box.'; return; }
+        // TODO: replace with a form endpoint (e.g. a Cloudflare Pages Function) once hosting is set up.
+        s.textContent = 'Thank you. Your message is ready to send; the form will be connected when the site goes live.';
+        f.reset();
+      });
+    </script>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>&copy; 2026 DataQuant. A South African data consultancy.</div>
+      <div class="footer-links">
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy notice</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
